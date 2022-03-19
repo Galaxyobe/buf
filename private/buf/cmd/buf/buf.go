@@ -16,6 +16,7 @@ package buf
 
 import (
 	"context"
+	"github.com/bufbuild/buf/private/buf/cmd/buf/command/lsdeps"
 	"time"
 
 	"github.com/bufbuild/buf/private/buf/bufcli"
@@ -102,6 +103,7 @@ func NewRootCommand(name string) *appcmd.Command {
 			breaking.NewCommand("breaking", builder),
 			generate.NewCommand("generate", builder),
 			lsfiles.NewCommand("ls-files", builder),
+			lsdeps.NewCommand("ls-deps", builder),
 			push.NewCommand("push", builder),
 			{
 				Use:   "mod",
